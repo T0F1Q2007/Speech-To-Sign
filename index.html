@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice2Sign - Speech to ASL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Itim&family=Jaini&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-wrapper">
+        <div id="ai-warning" class="warning-banner" style="display: none;">
+            ⚠️ Gemini AI is currently unreachable. Sentence correction and sign verification are disabled.
+        </div>
+        <header>
+            <h1 class="design-title">Speech to Sign language</h1>
+        </header>
+
+        <main>
+            <div class="center-content">
+                <button id="record-btn" class="design-btn">
+                    <span id="btn-text">Press here to record</span>
+                </button>
+                
+                <div class="transcript-container">
+                    <div id="transcript-preview" class="design-transcript">
+                        Your text goes here ...
+                    </div>
+                </div>
+            </div>
+
+            <div id="results-grid" class="results-grid">
+                <!-- Word Cards will be injected here -->
+            </div>
+        </main>
+
+        <div id="status" class="status-indicator">Ready</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

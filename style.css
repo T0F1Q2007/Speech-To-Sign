@@ -1,0 +1,202 @@
+:root {
+    --gradient: linear-gradient(133deg, rgba(50.39, 232.93, 196.42, 0.81) 0%, rgba(216.02, 245.19, 50.69, 0.78) 99%);
+    --btn-bg: rgba(22.40, 237.77, 245.19, 0.28);
+    --transcript-bg: #D9D9D9;
+    --text-dark: rgba(0, 0, 0, 0.65);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--gradient);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    padding: 2rem;
+}
+
+.app-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.warning-banner {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #fecaca;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.design-title {
+    color: white;
+    font-size: 48px; /* Reduced from 96px */
+    font-family: 'Jaini', cursive;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    gap: 1.5rem;
+}
+
+.design-btn {
+    width: 300px; /* Reduced from 400px */
+    height: 70px;  /* Reduced from 100px */
+    background: var(--btn-bg);
+    border-radius: 84px;
+    border: 1px rgba(0, 0, 0, 0.48) solid;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.design-btn:hover {
+    background: rgba(22.40, 237.77, 245.19, 0.4);
+    transform: scale(1.02);
+}
+
+.design-btn.recording {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: #ef4444;
+}
+
+#btn-text {
+    color: black;
+    font-size: 24px; /* Reduced from 36px */
+    font-family: 'Itim', cursive;
+    font-weight: 400;
+}
+
+.transcript-container {
+    width: 600px;  /* Reduced from 742px */
+    height: 120px; /* Reduced from 177px */
+    background: var(--transcript-bg);
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.design-transcript {
+    color: var(--text-dark);
+    font-size: 20px; /* Reduced from 32px */
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.status-indicator {
+    margin-top: 1rem;
+    color: white;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.results-grid {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 240px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img-container {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-title {
+    font-family: 'Itim', cursive;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+.card-definition {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .design-title { font-size: 64px; }
+    .design-btn { width: 300px; height: 80px; }
+    #btn-text { font-size: 24px; }
+    .transcript-container { width: 90%; height: auto; min-height: 150px; padding: 2rem; }
+    .design-transcript { font-size: 24px; }
+}
